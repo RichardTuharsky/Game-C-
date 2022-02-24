@@ -91,7 +91,7 @@ namespace Project_Udemy.Characters.Melee
                 }
                 else
                 {
-                    throw new AbandonedMutexException(string.Empty);
+                    throw new ArgumentException(string.Empty);
                 }
             }
         }
@@ -109,10 +109,33 @@ namespace Project_Udemy.Characters.Melee
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Innaproportiate length of name should be between 3 and 12 characters.");
+                    throw new ArgumentException(string.Empty, "Innaproportiate length of name should be between 3 and 12 characters.");
                 }
             }
 
+        }
+        public Chainlink BodyArmor
+        {
+            get
+            {
+                return bodyArmor;
+            }
+            set
+            {
+                bodyArmor = value;
+            }
+        }
+
+        public Hammer Weapon
+        {
+            get
+            {
+                return weapon;
+            }
+            set
+            {
+                weapon = value;
+            }
         }
         public void HolyBlow()
         {
