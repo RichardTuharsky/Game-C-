@@ -19,6 +19,27 @@ namespace Project_Udemy.Characters.Melee
 
         private Chainlink bodyArmor;
         private Axe weapon;
+
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 10)
+                {
+                     abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 10.");
+                }
+            }
+            
+            
+        }
         public Warrior()
         {
 
