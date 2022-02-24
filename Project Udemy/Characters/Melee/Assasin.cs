@@ -99,7 +99,7 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return bodyArmor;
+                return bodyArmor
             }
             set
             {
