@@ -20,4 +20,23 @@ namespace Project_Udemy.Characters.Spellcasters
         private LightLeatherVest bodyArmor;
         private Staff weapon;
     }
-}
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 10)
+                {
+                     int abilityPoints = value;
+            }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 10.");
+                }
+            }
+        }
+
+  

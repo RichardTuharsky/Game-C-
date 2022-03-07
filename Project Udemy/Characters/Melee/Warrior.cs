@@ -135,8 +135,40 @@ namespace Project_Udemy.Characters.Melee
             }
         }
         public Warrior()
+            :this("Bob", 1)
         {
+           
+        }
+        public Warrior(string name, int level)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = 30;
+            this.AbilityPoints = 100;
+            this.Faction = "Melee";
+            this.BodyArmor = new Chainlink();
+            this.Weapon =  new Axe();
+        }
 
+        public Warrior(string name, int level, int healthpoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 100;
+            this.Faction = "Melee";
+            this.BodyArmor = new Chainlink();
+            this.Weapon = new Axe();
+        }
+        public Warrior(string name, int level, int healthpoints, int abilitypoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = abilitypoints;
+            this.Faction = "Melee";
+            this.BodyArmor = new Chainlink();
+            this.Weapon = new Axe();
         }
         public void Strike()
         {

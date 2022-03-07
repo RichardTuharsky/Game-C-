@@ -25,7 +25,7 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return abilityPoints;
+                return this.abilityPoints;
             }
             set
             {
@@ -43,7 +43,7 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return healthPoints;
+                return this.healthPoints;
             }
             set
             {
@@ -61,7 +61,7 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return faction;
+                return this.faction;
             }
             set
             {
@@ -80,7 +80,7 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return name;
+                return this.name;
             }
             set
             {
@@ -94,12 +94,14 @@ namespace Project_Udemy.Characters.Melee
                 }
             }
         }
-        
+
+        public int Level { get; }
+
         public LightLeatherVest BodyArmor
         {
             get
             {
-                return bodyArmor
+                return this.bodyArmor
             }
             set
             {
@@ -111,12 +113,52 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return weapon;
+                return this.weapon;
             }
             set
             {
                 weapon = value;
             }
+        }
+        public Assasin()
+        {
+            this.Name = "Zoro";
+            this.Level = 5;
+            this.HealthPoints = 32;
+            this.AbilityPoints = 95;
+            this.Faction = "Melee";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Sword();
+        }
+        public Assasin(string name, int level)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = 32;
+            this.AbilityPoints = 95;
+            this.Faction = "Melee";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Sword();
+        }
+        public Assasin(string name, int level, int healthpoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 95;
+            this.Faction = "Melee";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Sword();
+        }
+        public Assasin(string name, int level, int healthPoints, int abilitypoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = abilityPoints;
+            this.Faction = "Melee";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Sword();
         }
 
         public void Raze()

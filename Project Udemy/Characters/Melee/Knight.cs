@@ -137,6 +137,34 @@ namespace Project_Udemy.Characters.Melee
                 weapon = value;
             }
         }
+
+        public Knight()
+        {
+            this.name = "Jambo";
+            this.level = 1;
+            this.healthPoints = 20;
+            this.abilityPoints = 78;
+            this.bodyArmor = new Chainlink();
+            this.weapon = new Hammer();
+        }
+        public Knight(string name, int level, int healthpoints)
+        {
+            this.name = "Jambo";
+            this.level = 1;
+            this.HealthPoints = healthPoints;
+            this.abilityPoints = 78;
+            this.bodyArmor = new Chainlink();
+            this.weapon = new Hammer();
+        }
+        public Knight(string name, int level, int healthpoints, int abilitypoints)
+        {
+            this.name = "Jambo";
+            this.level = 1;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = abilityPoints;
+            this.bodyArmor = new Chainlink();
+            this.weapon = new Hammer();
+        }
         public void HolyBlow()
         {
             throw new NotImplementedException();
