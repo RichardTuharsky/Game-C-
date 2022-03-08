@@ -6,18 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Udemy.Characters.Melee
+namespace Project_Udemy.Characters.Spellcasters
 {
-    public class Warrior
-    { 
+    public class Necromancer
+    {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;
-        private const Faction DEFAULT_FACTION = Faction.Melee;
+        private const Faction DEFAULT_FACTION = Faction.Spellcaster;
         private const int DEFAULT_HEALTH_POINTS = 50;
-        private const string DEFAULT_NAME = "Bob";
+        private const string DEFAULT_NAME = "Roko";
 
-        private readonly Chainlink DEFAULT_BODY_ARMOR = new Chainlink();
-        private readonly Axe DEFAULT_WEAPON = new Axe();
+        private readonly LightLeatherVest DEFAULT_BODY_ARMOR = new LightLeatherVest();
+        private readonly Sword DEFAULT_WEAPON = new Sword();
+        private Sword weapon;
+        private LightLeatherVest bodyArmor;
         private string v1;
         private int v2;
 
@@ -25,13 +27,14 @@ namespace Project_Udemy.Characters.Melee
         {
             get
             {
-                return this.abilityPoints;
+                int abilityPoints = 0;
+                return abilityPoints;
             }
             set
             {
                 if (value >= 0 && value <= 10)
                 {
-                     this.abilityPoints = value;
+                    int abilityPoints = value;
                 }
                 else
                 {
@@ -39,80 +42,81 @@ namespace Project_Udemy.Characters.Melee
                 }
             }
         }
+
         public int HealthPoints
         {
             get
             {
+                int healthPoints = 0;
                 return healthPoints;
             }
             set
             {
-                if (value >= 0 && value <= 50)
+                if (value >= 0 && value <= 100)
                 {
-                    healthPoints = value;
+                    int healthPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 50.")
+                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 100.");
                 }
             }
-            
         }
-        private int Level
+
+        public int Level
         {
             get
             {
+                int level = 0;
                 return level;
             }
             set
-            {   if (value >= 1 && value <= 100)
+            {
+                if (value >= 0)
                 {
-                    level = value;
+                    int level = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 1 and <= 100.");
+                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, level should always be positive.");
                 }
             }
+        }
 
-        }
-        public string Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                if (value == "Male" || value == "Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "The faction should be either male.");
-                }
-            }
-        }
         public string Name
         {
             get
             {
+                string name = null;
                 return name;
             }
             set
             {
                 if (value.Length >= 3 && value.Length <= 12)
                 {
-                    name = value;
+                    string name = value;
                 }
                 else
                 {
-                    throw new ArgumentException(string.Empty, "Inappropriate value , the length of the name should be between 3 and 12 ");
+                    throw new ArgumentException(string.Empty, "Inappropriate length of name, name should be between 3 and 12 characters.");
                 }
             }
         }
-        public Chainlink BodyArmor
+
+
+        public Faction Faction
+        {
+            get
+            {
+                Faction faction = null;
+                return faction;
+            }
+            set
+            {
+                this.Faction = value;
+            }
+        }
+        public LightLeatherVest BodyArmor
         {
             get
             {
@@ -124,7 +128,7 @@ namespace Project_Udemy.Characters.Melee
             }
         }
 
-        public Axe Weapon
+        public Sword Weapon
         {
             get
             {
@@ -136,15 +140,13 @@ namespace Project_Udemy.Characters.Melee
             }
         }
 
-        public static Action DEFAULT_FACTION1 => DEFAULT_FACTION;
-
-        public Warrior()
-            :this("Bob",1)
+        public Necromancer()
+           : this("MrBean", 1)
         {
-           
+
         }
-       
-        public Warrior(int level, int healthpoints, int abilitypoints)
+
+        public Necromancer(int level, int healthpoints, int abilitypoints)
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
@@ -155,24 +157,10 @@ namespace Project_Udemy.Characters.Melee
             this.Weapon = DEFAULT_WEAPON;
         }
 
-        public Warrior(string v1, int v2)
+        public Necromancer(string v1, int v2)
         {
             this.v1 = v1;
             this.v2 = v2;
-        }
-
-        public void Strike()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Execute()
-        {
-            throw new NotImplementedException();
-        }
-        public void SkinHarden()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -10,15 +10,17 @@ namespace Project_Udemy.Characters.Melee
 {
     public class Knight
     {
-        private int abilityPoints;
+        private const int DEFAULT_LEVEL = 1;
+        private const int DEFAULT_ABILITY_POINTS = 100;
+        private const Faction DEFAULT_FACTION = Faction.Melee;
+        private const int DEFAULT_HEALTH_POINTS = 50;
+        private const string DEFAULT_NAME = "Wick";
+
+        private readonly Chainlink DEFAULT_BODY_ARMOR = new Chainlink();
+        private readonly Hammer DEFAULT_WEAPON = new Hammer();
+        private string v1;
+        private int v2;
         private int healthPoints;
-        private int level;
-
-        private string faction;
-        private string name;
-
-        private Chainlink bodyArmor;
-        private Hammer weapon;
 
         public int AbilityPoints
         {
@@ -139,32 +141,26 @@ namespace Project_Udemy.Characters.Melee
         }
 
         public Knight()
+            :this("Jambo", 1)
         {
-            this.name = "Jambo";
-            this.level = 1;
-            this.healthPoints = 20;
-            this.abilityPoints = 78;
-            this.bodyArmor = new Chainlink();
-            this.weapon = new Hammer();
+         
         }
-        public Knight(string name, int level, int healthpoints)
+        public Knight(int level, int healthpoints, int abilitypoints)
         {
-            this.name = "Jambo";
-            this.level = 1;
+            this.Name = DEFAULT_NAME;
+            this.Level = level;
             this.HealthPoints = healthPoints;
-            this.abilityPoints = 78;
-            this.bodyArmor = new Chainlink();
-            this.weapon = new Hammer();
+            this.AbilityPoints = abilitypoints;
+            this.Faction = DEFAULT_NAME;
+            this.BodyArmor = DEFAULT_BODY_ARMOR;
+            this.Weapon = DEFAULT_WEAPON;
         }
-        public Knight(string name, int level, int healthpoints, int abilitypoints)
+        public Knight(string v1, int v2)
         {
-            this.name = "Jambo";
-            this.level = 1;
-            this.HealthPoints = healthPoints;
-            this.AbilityPoints = abilityPoints;
-            this.bodyArmor = new Chainlink();
-            this.weapon = new Hammer();
+            this.v1 = v1;
+            this.v2 = v2;
         }
+
         public void HolyBlow()
         {
             throw new NotImplementedException();
