@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Characters.Melee
 {
-    public class Assasin
+    public class Assasin : Character
     {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 100;
@@ -18,103 +18,13 @@ namespace Project_Udemy.Characters.Melee
 
         private readonly LightLeatherVest DEFAULT_BODY_ARMOR = new LightLeatherVest();
         private readonly Sword DEFAULT_WEAPON = new Sword();
-        private int healthPoints;
+     
         private string v1;
         private int v2;
+
         private Sword weapon;
         private LightLeatherVest bodyArmor;
-        private string name;
-        private string faction;
-        private int abilityPoints;
-
-        public int AbilityPoints
-        {
-            get
-            {
-                return this.abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                    abilityPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 10.");
-                }
-            }
-        }
-        public int HealthPoints
-        {
-            get
-            {
-                return this.healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 50)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 50");
-                }
-            }
-        }
-        public string Faction
-        {
-            get
-            {
-                return this.faction;
-            }
-            set
-            {
-                if (value == "Male" || value == "Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "The faction should be either male");
-                }
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                if (value.Length <= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "Inappropriate length of the name, should be between 3 and 12");
-                }
-            }
-        }
-
-        public int Level { get; }
-
-        public LightLeatherVest BodyArmor
-        {
-            get
-            {
-                return this.bodyArmor;
-            }
-            set
-            {
-                bodyArmor = value;
-            }
-        }
-        
+   
         public Sword Weapon
         {
             get

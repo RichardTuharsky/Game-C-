@@ -4,15 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Udemy.Equipments.Weapons
+namespace Project_Udemy.Equipments.Weapons.Blunt
 {
-    public class Hammer
+    public class Hammer : Blunt
     {
-        private int damage;
-        
-        public Hammer()
-        {
+        private const int DEFAULT_DAMAGE_POINTS = 10;
 
+        public Hammer()
+            : this(DEFAULT_DAMAGE_POINTS)
+        {
+        }
+        public Hammer(int armorPoints)
+        {
+            this.DamagePoints = armorPoints;
         }
 
         public void Stun()

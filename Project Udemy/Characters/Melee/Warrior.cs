@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Project_Udemy.Characters.Melee
 {
-    public class Warrior
+    public class Warrior : Character
     { 
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;
@@ -20,98 +21,9 @@ namespace Project_Udemy.Characters.Melee
         private readonly Axe DEFAULT_WEAPON = new Axe();
         private string v1;
         private int v2;
+        private Axe weapon;
+        private Chainlink bodyArmor;
 
-        public int AbilityPoints
-        {
-            get
-            {
-                return this.abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                     this.abilityPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 10.");
-                }
-            }
-        }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 50)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 50.")
-                }
-            }
-            
-        }
-        private int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {   if (value >= 1 && value <= 100)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 1 and <= 100.");
-                }
-            }
-
-        }
-        public string Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                if (value == "Male" || value == "Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "The faction should be either male.");
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length >= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "Inappropriate value , the length of the name should be between 3 and 12 ");
-                }
-            }
-        }
         public Chainlink BodyArmor
         {
             get

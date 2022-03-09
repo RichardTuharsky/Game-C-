@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Udemy.Equipments.Weapons
+namespace Project_Udemy.Equipments.Weapons.Sharp
 {
-    public class Sword
+    public class Axe : Sharp
     {
         private int damage;
 
-        public Sword()
+        public Axe()
         {
 
         }
 
-        public void Bloodthirst()
+        public void HackNSlash()
         {
             throw new NotImplementedException();
         }

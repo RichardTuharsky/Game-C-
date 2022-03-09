@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Characters.Melee
 {
-    public class Knight
+    public class Knight : Character
     {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 100;
@@ -18,104 +18,12 @@ namespace Project_Udemy.Characters.Melee
 
         private readonly Chainlink DEFAULT_BODY_ARMOR = new Chainlink();
         private readonly Hammer DEFAULT_WEAPON = new Hammer();
+
         private string v1;
         private int v2;
-        private int healthPoints;
+        private Chainlink bodyArmor;
+        private Hammer weapon;
 
-        public int AbilityPoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                      abilityPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Inappropriate value, the value should be >= 0 and <= 10.");
-                }
-            }
-        }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 50)
-                {
-                    healthPoints = value;
-
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "You are getting out of health");
-                }
-            }
-            
-        }
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 1 && value <= 100)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Level");
-                }
-            }
-            
-        }
-        public string Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                if (value == "Male" || value == "Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty);
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length >= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "Innaproportiate length of name should be between 3 and 12 characters.");
-                }
-            }
-
-        }
         public Chainlink BodyArmor
         {
             get
@@ -145,11 +53,11 @@ namespace Project_Udemy.Characters.Melee
         {
          
         }
-        public Knight(int level, int healthpoints, int abilitypoints)
+        public Knight(int level, int healthpoints, int abilitypoints, int level)
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
-            this.HealthPoints = healthPoints;
+            this.HealthPoints = healthpoints;
             this.AbilityPoints = abilitypoints;
             this.Faction = DEFAULT_NAME;
             this.BodyArmor = DEFAULT_BODY_ARMOR;
