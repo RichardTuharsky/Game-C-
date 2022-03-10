@@ -91,19 +91,9 @@ namespace Project_Udemy.Characters
             }
         }
 
-        public void Attack()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void SpecialAttack()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Defend()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void SpecialAttack();
+        public abstract void Attack();
+        public abstract void Defend();
     }
 }

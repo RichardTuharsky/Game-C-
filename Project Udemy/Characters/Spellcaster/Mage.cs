@@ -4,7 +4,7 @@ using Project_Udemy.Equipments.Weapons;
 
 namespace Project_Udemy.Characters.Spellcasters
 {
-    public class Mage : Character
+    public abstract class Mage : Character
     {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;
@@ -81,6 +81,10 @@ namespace Project_Udemy.Characters.Spellcasters
         {
             throw new NotImplementedException();
         }
+
+        public abstract void SpecialAttack();
+        public abstract void Attack();
+        public abstract void Defend();
     }
 }
 

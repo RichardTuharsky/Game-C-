@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Characters.Spellcaster
 {
-    public class Druid : Character
+    public abstract class Druid : Character
     {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;

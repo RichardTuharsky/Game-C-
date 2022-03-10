@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Characters.Spellcasters
 {
-    public class Necromancer : Character
+    public abstract class Necromancer : Character
     {
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;

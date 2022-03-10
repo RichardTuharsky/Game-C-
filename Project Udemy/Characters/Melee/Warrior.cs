@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Characters.Melee
 {
-    public class Warrior : Character
+    public abstract class Warrior : Character
     { 
         private const int DEFAULT_LEVEL = 1;
         private const int DEFAULT_ABILITY_POINTS = 120;
@@ -86,5 +86,10 @@ namespace Project_Udemy.Characters.Melee
         {
             throw new NotImplementedException();
         }
+
+        public abstract void SpecialAttack();
+        public abstract void Attack();
+        public abstract void Defend();
+       
     }
 }
