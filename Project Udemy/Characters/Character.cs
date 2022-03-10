@@ -1,10 +1,11 @@
-﻿using Project_Udemy.Enums;
+﻿using Project_Udemy.Characters.Interfaces;
+using Project_Udemy.Enums;
 using System;
 
 namespace Project_Udemy.Characters
 
 {
-    public class Character
+    public abstract class Character : IAttack, IDefend
     {
         private int healthPoints;
         private int level;
@@ -88,6 +89,21 @@ namespace Project_Udemy.Characters
                     throw new ArgumentException(string.Empty, "Inappropriate value , the length of the name should be between 3 and 12 ");
                 }
             }
+        }
+
+        public void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SpecialAttack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Defend()
+        {
+            throw new NotImplementedException();
         }
     }
 }
