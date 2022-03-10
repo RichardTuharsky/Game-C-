@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Equipments.Armors.Heavy
 {
-    internal class Heavy
+    internal class Heavy : Armor 
     {
     }
 }

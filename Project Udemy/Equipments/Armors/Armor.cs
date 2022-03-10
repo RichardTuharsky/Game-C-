@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Equipments.Armors
 {
-    internal class Armor
+    public class Armor
     {
+        private int armorPoints;
+
+        public int ArmorPoints
+        {
+            get
+            {
+                return armorPoints;
+            }
+            set
+            {
+                if(value >= 0)
+                {
+                    armorPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Armor Points value should be a positive number");
+                }
+            }
+        }
+
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Udemy.Equipments.Armors.Leather
+namespace Project_Udemy.Equipments.Armors.Light
 {
-    internal class Light
+    internal class Light : Armor
     {
     }
 }

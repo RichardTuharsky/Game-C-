@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Udemy.Equipments.Armors.Leather
 {
-    internal class Leather
+    internal class Leather : Armor
     {
     }
 }
