@@ -1,5 +1,8 @@
-﻿using Project_Udemy.Equipments.Armors;
+﻿using Project_Udemy.Enums;
+using Project_Udemy.Equipments.Armors;
+using Project_Udemy.Equipments.Armors.Leather;
 using Project_Udemy.Equipments.Weapons;
+using Project_Udemy.Equipments.Weapons.Sharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +40,8 @@ namespace Project_Udemy.Characters.Melee
             }
         }
 
+        public static Faction DEFAULT_FACTION1 => DEFAULT_FACTION;
+
         public Assasin()
             : this("Sura", 1)
         {
@@ -46,7 +51,7 @@ namespace Project_Udemy.Characters.Melee
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
-            this.HealthPoints = healthPoints;
+            this.HealthPoints = healthpoints;
             this.AbilityPoints = abilitypoints;
             this.Faction = DEFAULT_NAME;
             this.BodyArmor = DEFAULT_BODY_ARMOR;
@@ -71,8 +76,17 @@ namespace Project_Udemy.Characters.Melee
         {
             throw new NotImplementedException();
         }
-        public abstract void SpecialAttack();
-        public abstract void Attack();
-        public abstract void Defend();
+        public override void SpecialAttack()
+        {
+            this.Raze();
+        }
+        public override void Attack()
+        {
+            this.BleedToDeath();
+        }
+        public override void Defend()
+        {
+            this.Survival();
+        }
     }
 }

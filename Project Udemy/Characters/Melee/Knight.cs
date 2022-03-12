@@ -82,9 +82,18 @@ namespace Project_Udemy.Characters.Melee
             throw new NotImplementedException();
         }
 
-        public abstract void SpecialAttack();
-        public abstract void Attack();
-        public abstract void Defend();
+        public override void SpecialAttack()
+        {
+            this.HolyBlow();
+        }
+        public override void Attack()
+        {
+            this.PurifySoul();
+        }
+        public override void Defend()
+        {
+            this.RigtheousWings();
+        }
         
     }
 

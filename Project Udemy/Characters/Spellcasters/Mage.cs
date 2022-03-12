@@ -1,8 +1,10 @@
 ﻿
 using Project_Udemy.Equipments.Armors;
+using Project_Udemy.Equipments.Armors.Light;
 using Project_Udemy.Equipments.Weapons;
+using Project_Udemy.Equipments.Weapons.Blunt;
 
-namespace Project_Udemy.Characters.Spellcasters
+namespace Project_Udemy.Characters.Spellcaster
 {
     public abstract class Mage : Character
     {

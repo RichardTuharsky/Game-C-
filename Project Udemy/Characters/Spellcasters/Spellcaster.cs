@@ -1,7 +1,7 @@
 ﻿
 namespace Project_Udemy.Characters.Spellcaster
 {
-    public abstract class Spellcasters : Character
+    public abstract class Spellcaster : Character
     {
         private int manaPoints;
 

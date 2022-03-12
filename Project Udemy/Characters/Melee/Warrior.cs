@@ -1,5 +1,7 @@
 ﻿using Project_Udemy.Equipments.Armors;
+using Project_Udemy.Equipments.Armors.Heavy;
 using Project_Udemy.Equipments.Weapons;
+using Project_Udemy.Equipments.Weapons.Sharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,9 +89,18 @@ namespace Project_Udemy.Characters.Melee
             throw new NotImplementedException();
         }
 
-        public abstract void SpecialAttack();
-        public abstract void Attack();
-        public abstract void Defend();
+        public override void SpecialAttack()
+        {
+            this.Strike();
+        }
+        public override void Attack()
+        {
+            this.Execute();
+        }
+        public override void Defend()
+        {
+            this.SkinHarden();
+        }
        
     }
 }

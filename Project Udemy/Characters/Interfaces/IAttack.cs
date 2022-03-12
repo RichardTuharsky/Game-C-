@@ -5,6 +5,6 @@ namespace Project_Udemy.Characters.Interfaces
     {
         void Attack();
         void SpecialAttack();
-       
+        
     }
 }
