@@ -69,30 +69,30 @@ namespace Project_Udemy.Characters.Melee
             this.v2 = v2;
         }
 
-        public void HolyBlow()
+        public int HolyBlow()
         {
             throw new NotImplementedException();
         }
-        public void PurifySoul()
+        public int PurifySoul()
         {
             throw new NotImplementedException();
         }
-        public void RigtheousWings()
+        public int RigtheousWings()
         {
             throw new NotImplementedException();
         }
 
-        public override void SpecialAttack()
+        public override int SpecialAttack()
         {
-            this.HolyBlow();
+            return this.HolyBlow();
         }
-        public override void Attack()
+        public override int Attack()
         {
-            this.PurifySoul();
+            return this.PurifySoul();
         }
-        public override void Defend()
+        public override int Defend()
         {
-            this.RigtheousWings();
+            return this.RigtheousWings();
         }
         
     }

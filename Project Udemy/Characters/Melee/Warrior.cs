@@ -62,7 +62,7 @@ namespace Project_Udemy.Characters.Melee
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
-            this.HealthPoints = healthPoints;
+            this.HealthPoints = HealthPoints;
             this.AbilityPoints = abilitypoints;
             this.Faction = DEFAULT_NAME;
             this.BodyArmor = DEFAULT_BODY_ARMOR;
@@ -75,31 +75,31 @@ namespace Project_Udemy.Characters.Melee
             this.v2 = v2;
         }
 
-        public void Strike()
+        public int Strike()
         {
-            throw new NotImplementedException();
+            return - base.Weapon.DamagePoints + 10;
         }
 
-        public void Execute()
+        public int Execute()
         {
             throw new NotImplementedException();
         }
-        public void SkinHarden()
+        public int SkinHarden()
         {
-            throw new NotImplementedException();
+            return base.BodyArmor.ArmorPoints + 5;
         }
 
-        public override void SpecialAttack()
+        public override int SpecialAttack()
         {
-            this.Strike();
+            return this.Execute();
         }
-        public override void Attack()
+        public override int Attack()
         {
-            this.Execute();
+            return this.Strike();
         }
-        public override void Defend()
+        public override int Defend()
         {
-            this.SkinHarden();
+            return this.SkinHarden();
         }
        
     }

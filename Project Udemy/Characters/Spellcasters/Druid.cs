@@ -52,11 +52,7 @@ namespace Project_Udemy.Characters.Spellcaster
                 weapon = value;
             }
         }
-        public static Action DEFAULT_FACTION1 => DEFAULT_FACTION2;
-
-        public static Faction DEFAULT_FACTION2 => DEFAULT_FACTION3;
-
-        public static Faction DEFAULT_FACTION3 => DEFAULT_FACTION;
+       
 
         public Druid()
             : this("Bob", 1)
@@ -81,18 +77,30 @@ namespace Project_Udemy.Characters.Spellcaster
             this.v2 = v2;
         }
 
-        public void Strike()
+        public void Moonfire()
         {
             throw new NotImplementedException();
         }
 
-        public void Execute()
+        public void Starburst()
         {
             throw new NotImplementedException();
         }
-        public void SkinHarden()
+        public void OneWithTheNature()
         {
             throw new NotImplementedException();
+        }
+        public abstract int SpecialAttack()
+        {
+            return this.Starburst();
+        }
+        public abstract int Attack()
+        {
+            return this.Moonfire();
+        }
+        public abstract int Defend()
+        {
+            return this.OneWithTheNature();
         }
     }
 }

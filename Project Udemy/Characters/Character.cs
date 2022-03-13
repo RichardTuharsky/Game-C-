@@ -1,5 +1,7 @@
 ﻿using Project_Udemy.Characters.Interfaces;
 using Project_Udemy.Enums;
+using Project_Udemy.Equipments.Armors;
+using Project_Udemy.Equipments.Weapons;
 using System;
 
 namespace Project_Udemy.Characters
@@ -14,8 +16,35 @@ namespace Project_Udemy.Characters
 
         private string name;
 
+        private Weapon weapon;
+        private Armor bodyArmor;
 
-     
+        private bool isAlive;
+
+        private int scores;
+
+        public Weapon Weapon
+        {
+            get
+            {
+                return this.weapon;
+            }
+            set
+            {
+                this.weapon = value;
+            }
+        }
+        public Armor BodyArmor
+        {
+            get
+            {
+                return this.bodyArmor;
+            }
+            set
+            {
+                this.bodyArmor = value;
+            }
+        }
         public int HealthPoints
         {
             get
@@ -91,9 +120,54 @@ namespace Project_Udemy.Characters
             }
         }
 
+        public bool IsAlive
+        {
+            get
+            {
+                return this.isAlive;
+            }
+            private set
+            {
+                this.isAlive = value;
+            }
+        }
 
-        public abstract void SpecialAttack();
-        public abstract void Attack();
-        public abstract void Defend();
+        public int Scores
+        {
+            get
+            {
+                return this.scores;
+            }
+            private set
+            {
+                this.scores = value;
+            }
+        }
+        public abstract int SpecialAttack();
+        public abstract int Attack();
+        public abstract int Defend();
+
+        public void TakeDamage(int damage, string attackerName)
+        {
+            if(this.Defend() < damage)
+            {
+                this.healthPoints = this.healthPoints - damage + this.Defend();
+                if(this.healthPoints <= 0)
+                {
+                    this.isAlive = false;
+                }
+            }
+            else
+            {
+                Console.WriteLine("You are weak, it was nothing to me!");
+            }
+
+            if(!this.IsAlive)
+            {
+                Console.WriteLine($"{this.name} received {damage} from {attackerName} damage, and is now dead!");
+            }
+            else
+                Console.WriteLine($"{this.name} received {damage} from {attackerName} damage, and now has {this.healthPoints}");
+        }
     }
 }

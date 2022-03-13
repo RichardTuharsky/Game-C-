@@ -64,29 +64,29 @@ namespace Project_Udemy.Characters.Melee
             this.v2 = v2;
         }
 
-        public void Raze()
+        public int Raze()
         {
             throw new NotImplementedException();
         }
-        public void BleedToDeath()
+        public int BleedToDeath()
         {
             throw new NotImplementedException();
         }
-        public void Survival()
+        public int Survival()
         {
             throw new NotImplementedException();
         }
-        public override void SpecialAttack()
+        public override int SpecialAttack()
         {
-            this.Raze();
+            return this.Raze();
         }
-        public override void Attack()
+        public override int Attack()
         {
-            this.BleedToDeath();
+            return this.BleedToDeath();
         }
-        public override void Defend()
+        public override int Defend()
         {
-            this.Survival();
+            return this.Survival();
         }
     }
 }

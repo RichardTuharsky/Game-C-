@@ -73,5 +73,28 @@ namespace Project_Udemy.Characters.Spellcaster
             this.v1 = v1;
             this.v2 = v2;
         }
+        public void ShadowRage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VampireTouch()
+        {
+            throw new NotImplementedException();
+        }
+        public void BoneShield()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int SpecialAttack()
+        {
+            return this.VampireTouch();
+        }
+        public override int Attack();
+        public override int Defend()
+        {
+            return this.BoneShield();
+        }
     }
 }

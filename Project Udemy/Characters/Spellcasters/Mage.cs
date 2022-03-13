@@ -57,7 +57,7 @@ namespace Project_Udemy.Characters.Spellcaster
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
-            this.HealthPoints = healthPoints;
+            this.HealthPoints = HealthPoints;
             this.AbilityPoints = abilitypoints;
             this.Faction = DEFAULT_NAME;
             this.BodyArmor = DEFAULT_BODY_ARMOR;
@@ -70,23 +70,32 @@ namespace Project_Udemy.Characters.Spellcaster
             this.v2 = v2;
         }
 
-        public void Strike()
+        public int ArcaneWrath()
         {
             throw new NotImplementedException();
         }
 
-        public void Execute()
+        public int Meditation()
         {
-            throw new NotImplementedException();
+            return base.BodyArmor.ArmorPoints + 5;
         }
-        public void SkinHarden()
+        public int Fireball()
         {
-            throw new NotImplementedException();
+            return base.Weapon.DamagePoints + 10;
         }
 
-        public abstract void SpecialAttack();
-        public abstract void Attack();
-        public abstract void Defend();
+        public override int SpecialAttack()
+        {
+            return this.ArcaneWrath();
+        }
+        public override int Attack()
+        {
+            return this.Fireball();
+        }
+        public override int Defend()
+        {
+             this.Meditation();
+        }
     }
 }
 
