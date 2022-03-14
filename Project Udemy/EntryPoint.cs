@@ -44,8 +44,7 @@ namespace Project_Udemy
             {   
                 currentMelee = rng.Next(0,meleeTeam.Count);
                 currentSpellCaster = rng.Next(0,spellTeam.Count);
-                //Take a random melee
-                //Take a ranodm spellcaster
+                
                 spellTeam[currentSpellCaster].TakeDamage(meleeTeam[currentMelee].Attack(), meleeTeam[currentMelee].Name);
                 if (!spellTeam[currentSpellCaster].IsAlive)
                 {
@@ -80,7 +79,7 @@ namespace Project_Udemy
                     }
                 }
 
-                //Spellcaster attacks melee
+               
             }
 
         }
