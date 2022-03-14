@@ -1,4 +1,5 @@
 ﻿
+using Project_Udemy.Enums;
 using Project_Udemy.Equipments.Armors;
 using Project_Udemy.Equipments.Armors.Light;
 using Project_Udemy.Equipments.Weapons;
@@ -9,7 +10,7 @@ namespace Project_Udemy.Characters.Spellcaster
     public abstract class Mage : Character
     {
         private const int DEFAULT_LEVEL = 1;
-        private const int DEFAULT_ABILITY_POINTS = 120;
+        private const int DEFAULT_MANA_POINTS = 120;
         private const Faction DEFAULT_FACTION = Faction.Spellcaster;
         private const int DEFAULT_HEALTH_POINTS = 50;
         private const string DEFAULT_NAME = "Shaman";
@@ -55,13 +56,15 @@ namespace Project_Udemy.Characters.Spellcaster
 
         public Mage(int level, int healthpoints, int abilitypoints)
         {
-            this.Name = DEFAULT_NAME;
-            this.Level = level;
-            this.HealthPoints = HealthPoints;
-            this.AbilityPoints = abilitypoints;
-            this.Faction = DEFAULT_NAME;
-            this.BodyArmor = DEFAULT_BODY_ARMOR;
-            this.Weapon = DEFAULT_WEAPON;
+            base.Name = DEFAULT_NAME;
+            base.Level = level;
+            base.HealthPoints = HealthPoints;
+            base.AbilityPoints = abilitypoints;
+            base.Faction = DEFAULT_NAME;
+            base.BodyArmor = DEFAULT_BODY_ARMOR;
+            base.Weapon = DEFAULT_WEAPON;
+            base.IsAlive = true;
+            base.Scores = 0;
         }
 
         public Mage(string v1, int v2)
@@ -101,5 +104,3 @@ namespace Project_Udemy.Characters.Spellcaster
 
     
            
-    }
-}

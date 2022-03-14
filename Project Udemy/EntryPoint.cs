@@ -49,6 +49,7 @@ namespace Project_Udemy
                 spellTeam[currentSpellCaster].TakeDamage(meleeTeam[currentMelee].Attack(), meleeTeam[currentMelee].Name);
                 if (!spellTeam[currentSpellCaster].IsAlive)
                 {
+                    meleeTeam[currentMelee].WonBattle();
                     spellTeam.Remove(spellTeam[currentSpellCaster]);
                     if (spellTeam.Count == 0)
                     {
@@ -65,11 +66,12 @@ namespace Project_Udemy
                 meleeTeam[currentMelee].TakeDamage(spellTeam[currentSpellCaster].Attack(), spellTeam[0].Name);
                 if(!meleeTeam[currentMelee].IsAlive)
                 {
+                    spellTeam[currentSpellCaster].WonBattle();
                     meleeTeam.Remove(meleeTeam[currentMelee]);
 
                     if(meleeTeam.Count == 0)
                     {
-                        Console.WriteLine("Melee team wins!");
+                        Console.WriteLine("Spell team wins!");
                         break;
                     }
                     else
@@ -77,6 +79,7 @@ namespace Project_Udemy
                         currentSpellCaster = rng.Next(0, spellTeam.Count);
                     }
                 }
+
                 //Spellcaster attacks melee
             }
 

@@ -1,4 +1,5 @@
-﻿using Project_Udemy.Equipments.Armors;
+﻿using Project_Udemy.Enums;
+using Project_Udemy.Equipments.Armors;
 using Project_Udemy.Equipments.Armors.Leather;
 using Project_Udemy.Equipments.Weapons;
 using Project_Udemy.Equipments.Weapons.Sharp;
@@ -13,7 +14,7 @@ namespace Project_Udemy.Characters.Spellcaster
     public abstract class Necromancer : Character
     {
         private const int DEFAULT_LEVEL = 1;
-        private const int DEFAULT_ABILITY_POINTS = 120;
+        private const int DEFAULT_MANA_POINTS = 120;
         private const Faction DEFAULT_FACTION = Faction.Spellcaster;
         private const int DEFAULT_HEALTH_POINTS = 50;
         private const string DEFAULT_NAME = "Roko";
@@ -73,16 +74,16 @@ namespace Project_Udemy.Characters.Spellcaster
             this.v1 = v1;
             this.v2 = v2;
         }
-        public void ShadowRage()
+        public int ShadowRage()
         {
             throw new NotImplementedException();
         }
 
-        public void VampireTouch()
+        public int VampireTouch()
         {
             throw new NotImplementedException();
         }
-        public void BoneShield()
+        public int BoneShield()
         {
             throw new NotImplementedException();
         }
@@ -91,7 +92,10 @@ namespace Project_Udemy.Characters.Spellcaster
         {
             return this.VampireTouch();
         }
-        public override int Attack();
+        public override int Attack()
+        {
+            return this.ShadowRage();
+        }
         public override int Defend()
         {
             return this.BoneShield();

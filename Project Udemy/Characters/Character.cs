@@ -164,10 +164,20 @@ namespace Project_Udemy.Characters
 
             if(!this.IsAlive)
             {
-                Console.WriteLine($"{this.name} received {damage} from {attackerName} damage, and is now dead!");
+                Console.WriteLine($"{this.name} received {damage} damage from {attackerName}, and is now dead!");
             }
             else
-                Console.WriteLine($"{this.name} received {damage} from {attackerName} damage, and now has {this.healthPoints}");
+                Console.WriteLine($"{this.name} received {damage} damage from {attackerName}, and now has {this.healthPoints}");
+        }
+
+
+        public void WonBattle()
+        {
+            this.scores++;
+            if(this.scores % 10 == 0)
+            {
+                this.level++;
+            }
         }
     }
 }

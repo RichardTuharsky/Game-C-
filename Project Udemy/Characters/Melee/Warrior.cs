@@ -1,4 +1,5 @@
-﻿using Project_Udemy.Equipments.Armors;
+﻿using Project_Udemy.Enums;
+using Project_Udemy.Equipments.Armors;
 using Project_Udemy.Equipments.Armors.Heavy;
 using Project_Udemy.Equipments.Weapons;
 using Project_Udemy.Equipments.Weapons.Sharp;
@@ -13,19 +14,17 @@ namespace Project_Udemy.Characters.Melee
 {
     public abstract class Warrior : Character
     { 
-        private const int DEFAULT_LEVEL = 1;
-        private const int DEFAULT_ABILITY_POINTS = 120;
-        private const Faction DEFAULT_FACTION = Faction.Melee;
-        private const int DEFAULT_HEALTH_POINTS = 50;
-        private const string DEFAULT_NAME = "Bob";
+       
 
         private readonly Chainlink DEFAULT_BODY_ARMOR = new Chainlink();
         private readonly Axe DEFAULT_WEAPON = new Axe();
-        private string v1;
-        private int v2;
         private Axe weapon;
         private Chainlink bodyArmor;
 
+        public Warrior()
+            : this(Consts.Warrior.NAME, 1)
+        {
+        }
         public Chainlink BodyArmor
         {
             get
@@ -50,29 +49,24 @@ namespace Project_Udemy.Characters.Melee
             }
         }
 
-        public static Action DEFAULT_FACTION1 => DEFAULT_FACTION;
 
         public Warrior()
-            :this("Bob",1)
+            : this ("Bob",1)
         {
            
         }
        
         public Warrior(int level, int healthpoints, int abilitypoints)
         {
-            this.Name = DEFAULT_NAME;
-            this.Level = level;
-            this.HealthPoints = HealthPoints;
-            this.AbilityPoints = abilitypoints;
-            this.Faction = DEFAULT_NAME;
-            this.BodyArmor = DEFAULT_BODY_ARMOR;
-            this.Weapon = DEFAULT_WEAPON;
-        }
-
-        public Warrior(string v1, int v2)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
+            base.Name = DEFAULT_NAME;
+            base.Level = level;
+            base.HealthPoints = HealthPoints;
+            base.AbilityPoints = Consts.Warrior.DEFAULT_ABILITY_POINTS;
+            base.Faction = Faction.Melee;
+            base.BodyArmor = DEFAULT_BODY_ARMOR;
+            base.Weapon = DEFAULT_WEAPON;
+            base.IsAlive = true;
+            base.Scores = 0;
         }
 
         public int Strike()

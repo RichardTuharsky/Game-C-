@@ -1,5 +1,8 @@
-﻿using Project_Udemy.Equipments.Armors;
+﻿using Project_Udemy.Enums;
+using Project_Udemy.Equipments.Armors;
+using Project_Udemy.Equipments.Armors.Heavy;
 using Project_Udemy.Equipments.Weapons;
+using Project_Udemy.Equipments.Weapons.Blunt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +56,7 @@ namespace Project_Udemy.Characters.Melee
         {
          
         }
-        public Knight(int level, int healthpoints, int abilitypoints, int level)
+        public Knight(int level, int healthpoints, int abilitypoints)
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;

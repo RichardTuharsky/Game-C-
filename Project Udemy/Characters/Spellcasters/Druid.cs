@@ -14,7 +14,7 @@ namespace Project_Udemy.Characters.Spellcaster
     public abstract class Druid : Character
     {
         private const int DEFAULT_LEVEL = 1;
-        private const int DEFAULT_ABILITY_POINTS = 120;
+        private const int DEFAULT_MANA_POINTS = 120;
         private const int DEFAULT_HEALTH_POINTS = 50;
         private const Faction DEFAULT_FACTION = Faction.Spellcaster;
         private const string DEFAULT_NAME = "Lama";
@@ -27,8 +27,8 @@ namespace Project_Udemy.Characters.Spellcaster
 
         private string v1;
         private int v2;
+        private object manapoints;
 
-        
         public LightLeatherVest BodyArmor
         {
             get
@@ -60,12 +60,12 @@ namespace Project_Udemy.Characters.Spellcaster
 
         }
 
-        public Druid(int level, int healthpoints, int abilitypoints)
+        public Druid(int level, int healthpoints)
         {
             this.Name = DEFAULT_NAME;
             this.Level = level;
             this.HealthPoints = healthpoints;
-            this.AbilityPoints = abilitypoints;
+            this.ManaPoints = manapoints;
             this.Faction = DEFAULT_NAME;
             this.BodyArmor = DEFAULT_BODY_ARMOR;
             this.Weapon = DEFAULT_WEAPON;
@@ -77,28 +77,28 @@ namespace Project_Udemy.Characters.Spellcaster
             this.v2 = v2;
         }
 
-        public void Moonfire()
+        public int Moonfire()
         {
             throw new NotImplementedException();
         }
 
-        public void Starburst()
+        public int Starburst()
         {
             throw new NotImplementedException();
         }
-        public void OneWithTheNature()
+        public int OneWithTheNature()
         {
             throw new NotImplementedException();
         }
-        public abstract int SpecialAttack()
+        public override int SpecialAttack()
         {
             return this.Starburst();
         }
-        public abstract int Attack()
+        public override int Attack()
         {
             return this.Moonfire();
         }
-        public abstract int Defend()
+        public override int Defend()
         {
             return this.OneWithTheNature();
         }
